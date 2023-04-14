@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class ReadFileExample {
 
     public  void readFileTxt(String path){
-       try {
-           BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
+       try(  BufferedReader bufferedReader = new BufferedReader(new FileReader(path))
+       ) {
            String line;
            int sum =0;
            while ((line = bufferedReader.readLine()) != null){
@@ -26,7 +26,5 @@ public class ReadFileExample {
        String path = scanner.nextLine();
        ReadFileExample readFileExample = new ReadFileExample();
        readFileExample.readFileTxt(path);
-
-
     }
 }

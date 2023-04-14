@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class CopyFile {
     private static void copyFileUsingJava7Files(File source, File dest) throws IOException {
-        Files.copy(source.toPath(), dest.toPath(),StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(source.toPath(), dest.toPath(),StandardCopyOption.COPY_ATTRIBUTES);
     }
     private static void copyFileUsingStream(File source, File dest) throws IOException{
         InputStream is = null;
